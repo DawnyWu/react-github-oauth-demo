@@ -86,7 +86,7 @@
 	    { className: 'row' },
 	    _react2.default.createElement(
 	      'div',
-	      { className: 'col-md-2 col-md-offset-5' },
+	      { className: 'col-md-2 col-md-offset-4' },
 	      _react2.default.createElement(_Github2.default, null)
 	    )
 	  )

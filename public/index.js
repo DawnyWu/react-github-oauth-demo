@@ -8,7 +8,7 @@ ReactDOM.render(
       <h1>React Github Oauth Demo</h1>
     </div>
     <div className="row">
-      <div className="col-md-2 col-md-offset-5">
+      <div className="col-md-2 col-md-offset-4">
         <Github/>
       </div>
     </div>
