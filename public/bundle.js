@@ -74,7 +74,7 @@
 	  { className: 'container' },
 	  _react2.default.createElement(
 	    'div',
-	    { 'class': 'page-header' },
+	    { className: 'page-header' },
 	    _react2.default.createElement(
 	      'h1',
 	      null,
@@ -83,10 +83,10 @@
 	  ),
 	  _react2.default.createElement(
 	    'div',
-	    { 'class': 'row' },
+	    { className: 'row' },
 	    _react2.default.createElement(
 	      'div',
-	      { 'class': 'col-md-2 col-md-offset-5' },
+	      { className: 'col-md-2 col-md-offset-5' },
 	      _react2.default.createElement(_Github2.default, null)
 	    )
 	  )
@@ -25204,7 +25204,7 @@
 	        return _react2.default.createElement(
 	          'div',
 	          null,
-	          _react2.default.createElement(_reactAvatar2.default, { src: this.state.avatar_url }),
+	          _react2.default.createElement(_reactAvatar2.default, { size: 300, src: this.state.avatar_url }),
 	          _react2.default.createElement(
 	            'h3',
 	            null,

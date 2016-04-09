@@ -77,7 +77,7 @@ class Github extends Component {
     }else{
       return (
         <div>
-          <Avatar src={this.state.avatar_url}/>
+          <Avatar size={300} src={this.state.avatar_url}/>
           <h3>{this.state.name}</h3>
         </div>
 
