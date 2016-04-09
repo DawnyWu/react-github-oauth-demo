@@ -32,15 +32,13 @@ class Github extends Component {
     let code 
     let eventEmitter = new EventEmitter();
 
-    let logHref = () => {
-      console.log('loop')
-      let query
+    let checkCode = () => {
       try { 
-        query = popWin.location.search.substring(1)
+        let query = popWin.location.search.substring(1)
 
         code = querystring.parse(query).code
 
-        if( (typeof code) !== 'undefined'){
+        if((typeof code)!=='undefined'){
           clearInterval(intervalId)
           popWin.close()
           eventEmitter.emit('code', code);
@@ -48,20 +46,13 @@ class Github extends Component {
       } catch (err){}
     }
 
-    let intervalId = setInterval(logHref, 1000);
+    let intervalId = setInterval(checkCode, 1000);
 
     eventEmitter.on('code', (code) => {
-      // console.log('this: '+ JSON.stringify(this));
       console.log('get code:' + code)
 
-      // let access_token = this.state.access_token
-      // console.log('access_token:' + access_token)
       axios.get(`/api/githubToken?code=${code}`)
       .then((res)=>{
-        // access_token = res.data.access_token  
-        // console.log('res:'+res)
-        // console.log('access_token:' + access_token)
-        // console.log('access_token:' + res.data.access_token)
         access_token = res.data.access_token
         this.setState({access_token: res.data.access_token});
         return access_token

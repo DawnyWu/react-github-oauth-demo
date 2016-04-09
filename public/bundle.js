@@ -25133,11 +25133,9 @@
 	      var code = void 0;
 	      var eventEmitter = new _events.EventEmitter();
 
-	      var logHref = function logHref() {
-	        console.log('loop');
-	        var query = void 0;
+	      var checkCode = function checkCode() {
 	        try {
-	          query = popWin.location.search.substring(1);
+	          var query = popWin.location.search.substring(1);
 
 	          code = _querystring2.default.parse(query).code;
 
@@ -25149,19 +25147,12 @@
 	        } catch (err) {}
 	      };
 
-	      var intervalId = setInterval(logHref, 1000);
+	      var intervalId = setInterval(checkCode, 1000);
 
 	      eventEmitter.on('code', function (code) {
-	        // console.log('this: '+ JSON.stringify(this));
 	        console.log('get code:' + code);
 
-	        // let access_token = this.state.access_token
-	        // console.log('access_token:' + access_token)
 	        _axios2.default.get('/api/githubToken?code=' + code).then(function (res) {
-	          // access_token = res.data.access_token 
-	          // console.log('res:'+res)
-	          // console.log('access_token:' + access_token)
-	          // console.log('access_token:' + res.data.access_token)
 	          access_token = res.data.access_token;
 	          _this2.setState({ access_token: res.data.access_token });
 	          return access_token;
