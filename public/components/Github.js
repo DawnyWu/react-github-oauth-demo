@@ -60,7 +60,6 @@ class Github extends Component {
       .then((res)=>{
         axios.get(`https://api.github.com/user?access_token=${res}`)
         .then((res)=>{
-           console.log('res2:'+ JSON.stringify(res))
            let {name, avatar_url, email} = res.data
            this.setState({
              name: name, avatar_url: avatar_url, email: email
@@ -73,7 +72,7 @@ class Github extends Component {
   render() {
     if(!this.state.access_token){
       return (
-        <div className='btn btn-default' onClick={this.githubLogin.bind(this)}>Github</div>
+        <div className='btn btn-info' onClick={this.githubLogin.bind(this)}>Github oauth验证</div>
       );
     }else{
       return (

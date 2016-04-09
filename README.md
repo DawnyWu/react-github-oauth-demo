@@ -1,8 +1,8 @@
 ### 教程：如何使用react实现Github Oauth验证
 
-在线demo:
+在线demo: [http://103.253.146.179:3007/](http://103.253.146.179:3007/)
 
-例子源码:
+源码: [https://github.com/DawnyWu/react-github-oauth-demo](https://github.com/DawnyWu/react-github-oauth-demo)
 
 首先到github注册自己的应用，得到client_id 和 client_secret
 
@@ -48,7 +48,8 @@ let checkCode = () => {
 
 我们得到了code,下面要进行步骤2，获得access_token,但是这里有一个问题:
 
-通过POST来获得access_token的链接[https://github.com/login/oauth/access_token](https://github.com/login/oauth/access_token)是不支持CORS的。如果你在浏览器中请求它会报错误，详情和具体原因在[这里](https://github.com/isaacs/github/issues/330)有所阐述。
+通过POST来获得access_token的链接[https://github.com/login/oauth/access_token](https://github.com/login/oauth/access_token)是不支持CORS的。这是出于安全方面的考虑。如果你在浏览器中请求它会报错误，详情和具体原因在[这里](https://github.com/isaacs/github/issues/330)有所阐述。
+
 
 这个问题的解决问题的办法是client通过访问后台接口来获得access_token,向Github请求access_token的工作由server完成
 
@@ -85,6 +86,10 @@ router.get('/githubToken', function (req, res) {
 }
 ```
 
-在线demo:
+更多实现细节请查看源码
 
-例子源码:
+源码地址:[https://github.com/DawnyWu/react-github-oauth-demo](https://github.com/DawnyWu/react-github-oauth-demo)
+
+在线demo: [http://103.253.146.179:3007/](http://103.253.146.179:3007/)
+
+

@@ -69,7 +69,11 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	_reactDom2.default.render(_react2.default.createElement(_Github2.default, null), document.getElementById('body'));
+	_reactDom2.default.render(_react2.default.createElement(
+	  'div',
+	  { className: 'container' },
+	  _react2.default.createElement(_Github2.default, null)
+	), document.getElementById('body'));
 
 /***/ },
 /* 2 */
@@ -25158,7 +25162,6 @@
 	          return access_token;
 	        }).then(function (res) {
 	          _axios2.default.get('https://api.github.com/user?access_token=' + res).then(function (res) {
-	            console.log('res2:' + JSON.stringify(res));
 	            var _res$data = res.data;
 	            var name = _res$data.name;
 	            var avatar_url = _res$data.avatar_url;
@@ -25177,8 +25180,8 @@
 	      if (!this.state.access_token) {
 	        return _react2.default.createElement(
 	          'div',
-	          { className: 'btn btn-default', onClick: this.githubLogin.bind(this) },
-	          'Github'
+	          { className: 'btn btn-info', onClick: this.githubLogin.bind(this) },
+	          'Github oauth验证'
 	        );
 	      } else {
 	        return _react2.default.createElement(
