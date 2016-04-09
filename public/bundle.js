@@ -72,7 +72,24 @@
 	_reactDom2.default.render(_react2.default.createElement(
 	  'div',
 	  { className: 'container' },
-	  _react2.default.createElement(_Github2.default, null)
+	  _react2.default.createElement(
+	    'div',
+	    { 'class': 'page-header' },
+	    _react2.default.createElement(
+	      'h1',
+	      null,
+	      'React Github Oauth Demo'
+	    )
+	  ),
+	  _react2.default.createElement(
+	    'div',
+	    { 'class': 'row' },
+	    _react2.default.createElement(
+	      'div',
+	      { 'class': 'col-md-2 col-md-offset-5' },
+	      _react2.default.createElement(_Github2.default, null)
+	    )
+	  )
 	), document.getElementById('body'));
 
 /***/ },
