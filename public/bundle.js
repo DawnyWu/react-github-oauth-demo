@@ -25198,7 +25198,7 @@
 	        return _react2.default.createElement(
 	          'div',
 	          { className: 'btn btn-info', onClick: this.githubLogin.bind(this) },
-	          'Github oauth验证'
+	          '请点击完成Github oauth验证'
 	        );
 	      } else {
 	        return _react2.default.createElement(

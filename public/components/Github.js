@@ -72,7 +72,7 @@ class Github extends Component {
   render() {
     if(!this.state.access_token){
       return (
-        <div className='btn btn-info' onClick={this.githubLogin.bind(this)}>Github oauth验证</div>
+        <div className='btn btn-info' onClick={this.githubLogin.bind(this)}>请点击完成Github oauth验证</div>
       );
     }else{
       return (
